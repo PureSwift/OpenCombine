@@ -9,7 +9,7 @@
 @_implementationOnly import COpenCombineHelpers
 #endif
 
-#if os(WASI)
+#if os(WASI) || os(Android)
 internal struct __UnfairLock { // swiftlint:disable:this type_name
     internal static func allocate() -> UnfairLock { return .init() }
     internal func lock() {}

@@ -5,7 +5,7 @@
 //  Created by Sergej Jaskiewicz on 03.12.2019.
 //
 
-#if !os(WASI)
+#if !(os(WASI) || os(Android))
 
 #if canImport(COpenCombineHelpers)
 @_implementationOnly import COpenCombineHelpers

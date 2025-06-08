@@ -9,7 +9,7 @@
 @_implementationOnly import COpenCombineHelpers
 #endif
 
-#if os(WASI)
+#if os(WASI) || os(Android)
 private var __identifier: UInt64 = 0
 
 internal func __nextCombineIdentifier() -> UInt64 {

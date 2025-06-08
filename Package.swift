@@ -27,9 +27,9 @@ let openCombineShimTarget: Target = .target(
     dependencies: [
         "OpenCombine",
         .target(name: "OpenCombineDispatch",
-                condition: .when(platforms: supportedPlatforms.except([.wasi]))),
+                condition: .when(platforms: supportedPlatforms.except([.wasi, .android]))),
         .target(name: "OpenCombineFoundation",
-                condition: .when(platforms: supportedPlatforms.except([.wasi]))),
+                condition: .when(platforms: supportedPlatforms.except([.wasi, .android]))),
     ]
 )
 let openCombineTarget: Target = .target(
@@ -37,7 +37,7 @@ let openCombineTarget: Target = .target(
     dependencies: [
         .target(
             name: "COpenCombineHelpers",
-            condition: .when(platforms: supportedPlatforms.except([.wasi]))
+            condition: .when(platforms: supportedPlatforms.except([.wasi, .android]))
         ),
     ],
     exclude: [
@@ -53,7 +53,7 @@ let openCombineFoundationTarget: Target = .target(
         "OpenCombine",
         .target(
             name: "COpenCombineHelpers",
-            condition: .when(platforms: supportedPlatforms.except([.wasi]))
+            condition: .when(platforms: supportedPlatforms.except([.wasi, .android]))
         ),
     ]
 )
@@ -66,9 +66,9 @@ let openCombineTestsTarget: Target = .testTarget(
     dependencies: [
         "OpenCombine",
         .target(name: "OpenCombineDispatch",
-                condition: .when(platforms: supportedPlatforms.except([.wasi]))),
+                condition: .when(platforms: supportedPlatforms.except([.wasi, .android]))),
         .target(name: "OpenCombineFoundation",
-                condition: .when(platforms: supportedPlatforms.except([.wasi]))),
+                condition: .when(platforms: supportedPlatforms.except([.wasi, .android]))),
     ],
     swiftSettings: [
         .unsafeFlags(["-enable-testing"]),

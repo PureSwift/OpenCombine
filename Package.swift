@@ -90,8 +90,7 @@ let package = Package(
         openCombineFoundationTarget,
         openCombineDispatchTarget,
         openCombineTestsTarget,
-    ],
-    cxxLanguageStandard: .cxx17
+    ]
 )
 
 // MARK: Helpers
